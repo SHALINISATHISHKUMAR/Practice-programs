@@ -1,0 +1,70 @@
+#include <stdio.h>
+int main()
+{
+    int i,j,n,a[3][3],sum1=0,sum2=0,sum3=0,avg1,avg2,avg3;
+    int x=0,y=0,z=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        scanf("%d",&a[i][j]);
+    }  
+    for(i=0;i<3;i++)
+    {
+    if(a[i][0]>=1&&a[i][0]<=100)
+    {
+        sum1=sum1+a[i][0];
+        x++;
+    }
+    else
+        printf("invalid input trainee 1\n");
+    }
+    if(x==3)
+        avg1=sum1/3; 
+    for(i=0;i<3;i++)
+    {
+        if(a[i][1]>=1&&a[i][1]<=100)
+        {
+        sum2=sum2+a[i][1];
+        y++;
+        }
+        else
+        printf("invalid input trainee 2\n");
+    }
+    if(y==3)
+        avg2=sum2/3;
+    for(i=0;i<3;i++)
+    {
+        if(a[i][2]>=1&&a[i][2]<=100){
+        sum3=sum3+a[i][2];
+        z++;
+        }
+        else
+        printf("invalid input for trainee 3\n");
+    } 
+    if(z==3)
+        avg3=sum3/3;
+    if(avg1>=70&&avg2>=70&&avg3>=70)
+    {
+    if(avg1>=avg2&&avg1>=avg3)
+    {
+       printf("trainee:1\n");
+       if(avg1==avg2)
+       printf("trainee:2\n");
+       else if(avg1==avg3)
+       printf("trainee:3\n");
+    }
+    else if(avg2>=avg1&&avg2>=avg3)
+    {
+       printf("trainee:2\n");
+       if(avg2==avg1)
+       printf("trainee:1\n");
+       else if(avg2==avg3)
+       printf("trainee:3\n");
+    }
+    else
+       printf("trainee:3\n");
+    }
+    else
+    printf("All trainees are unfit\n");
+    return 0;
+}
