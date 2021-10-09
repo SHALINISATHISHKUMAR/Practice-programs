@@ -20,7 +20,7 @@ int main()
         }
         a[0]=last;
     }
-    printf("after rotation");
+    printf("after rotation:");
     for(i=0;i<n;i++)
     printf("%d ",a[i]);
     return 0;
